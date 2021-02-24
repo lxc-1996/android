@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/list_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_marginBottom="1dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            tools:text="我是实例位子"
+            style="@style/item_simple_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="0dp"
+                tools:text="恭喜你被录取了"
+                android:textSize="18dp"
+                android:layout_weight="1"
+                style="@style/button"
+                android:text="删除" />
+            <Button
+                android:id="@+id/btn_watch"
+                android:layout_width="0dp"
+                tools:text="恭喜你被录取了"
+                android:textSize="18dp"
+                android:layout_weight="1"
+                style="@style/button"
+                android:text="查看" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

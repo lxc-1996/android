@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.lxc.recruitment.entity.LetterEntity"/>
+        <variable
+            name="letter"
+            type="LetterEntity" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="信件标题"
+                app:value="@={letter.title}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="信件内容"
+                app:value="@={letter.content}"/>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="发送"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
+

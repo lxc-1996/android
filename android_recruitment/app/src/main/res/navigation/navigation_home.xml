@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.lxc.recruitment.component.home.MainFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_letterInfoFragment"
+            app:destination="@id/letterInfoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_adminInfoFragment"
+            app:destination="@id/adminInfoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_personalInfoFragment"
+            app:destination="@id/personalInfoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_resumeManageFragment"
+            app:destination="@id/resumeManageFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_companyInfoFragment"
+            app:destination="@id/companyInfoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_jobsManageFragment"
+            app:destination="@id/jobsManageFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_newsInfoFragment"
+            app:destination="@id/newsInfoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_adminJobManagerFragment"
+            app:destination="@id/adminJobManagerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_adminUserManagerFragment"
+            app:destination="@id/adminUserManagerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_personalCollectionFragment"
+            app:destination="@id/personalCollectionFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/personalInfoFragment"
+        android:name="com.lxc.recruitment.component.personal.PersonalInfoFragment"
+        android:label="PersonalInfoFragment" />
+    <fragment
+        android:id="@+id/resumeManageFragment"
+        android:name="com.lxc.recruitment.component.personal.ResumeManageFragment"
+        android:label="ResumeManageFragment" >
+        <action
+            android:id="@+id/action_resumeManageFragment_to_resumeInfoFragment"
+            app:destination="@id/resumeInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resumeInfoFragment"
+        android:name="com.lxc.recruitment.component.personal.ResumeInfoFragment"
+        android:label="ResumeInfoFragment" >
+        <argument
+            android:name="isEdit"
+            app:argType="boolean"
+            android:defaultValue="true"/>
+
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L"/>
+
+        <argument
+            android:name="isWatch"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+    </fragment>
+    <fragment
+        android:id="@+id/adminInfoFragment"
+        android:name="com.lxc.recruitment.component.admin.AdminInfoFragment"
+        android:label="AdminInfoFragment" />
+    <fragment
+        android:id="@+id/companyInfoFragment"
+        android:name="com.lxc.recruitment.component.company.CompanyInfoFragment"
+        android:label="CompanyInfoFragment" >
+        <argument
+            android:name="isEdit"
+            app:argType="boolean"
+            android:defaultValue="true"/>
+
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L"/>
+    </fragment>
+    <fragment
+        android:id="@+id/jobsInfoFragment"
+        android:name="com.lxc.recruitment.component.company.JobsInfoFragment"
+        android:label="JobsInfoFragment" >
+        <argument
+            android:name="isEdit"
+            app:argType="boolean"
+            android:defaultValue="true"/>
+
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L"/>
+
+        <argument
+            android:name="isCollect"
+            app:argType="integer"
+            android:defaultValue="0"/>
+    </fragment>
+    <fragment
+        android:id="@+id/jobsManageFragment"
+        android:name="com.lxc.recruitment.component.company.JobsManageFragment"
+        android:label="JobsManageFragment" >
+        <action
+            android:id="@+id/action_jobsManageFragment_to_jobsInfoFragment"
+            app:destination="@id/jobsInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/letterInfoFragment"
+        android:name="com.lxc.recruitment.component.home.LetterInfoFragment"
+        android:label="LetterInfoFragment" >
+        <argument
+            android:name="isEdit"
+            app:argType="boolean"
+            android:defaultValue="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/newsInfoFragment"
+        android:name="com.lxc.recruitment.component.admin.NewsInfoFragment"
+        android:label="NewsInfoFragment" >
+        <argument
+            android:name="isEdit"
+            app:argType="boolean"
+            android:defaultValue="true"/>
+
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L"/>
+    </fragment>
+    <fragment
+        android:id="@+id/adminUserManagerFragment"
+        android:name="com.lxc.recruitment.component.admin.AdminUserManagerFragment"
+        android:label="AdminUserManagerFragment" />
+    <fragment
+        android:id="@+id/adminJobManagerFragment"
+        android:name="com.lxc.recruitment.component.admin.AdminJobManagerFragment"
+        android:label="adminJobManagerFragment" >
+        <action
+            android:id="@+id/action_adminJobManagerFragment_to_jobsInfoFragment"
+            app:destination="@id/jobsInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalCollectionFragment"
+        android:name="com.lxc.recruitment.component.personal.PersonalCollectionFragment"
+        android:label="PersonalCollectionFragment" />
+</navigation>

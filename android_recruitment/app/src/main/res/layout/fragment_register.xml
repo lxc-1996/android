@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.lxc.base.http.entity.UserEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".component.MainActivity">
+
+        <com.lxc.base.view.LeftTextEditText
+            android:id="@+id/et_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:left_view_hint="请输入账号"
+            app:text="账号"
+            app:value="@={user.account}"
+            tools:ignore="MissingConstraints" />
+
+        <com.lxc.base.view.LeftTextEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/et_account"
+            app:layout_constraintStart_toStartOf="@+id/et_account"
+            app:layout_constraintTop_toBottomOf="@+id/et_account"
+            app:left_view_hint="请输入密码"
+            app:text="密码"
+            app:value="@={user.password}"
+            tools:ignore="MissingConstraints" />
+
+        <com.lxc.base.view.LeftTextEditText
+            android:id="@+id/et_problem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/et_account"
+            app:layout_constraintStart_toStartOf="@+id/et_account"
+            app:layout_constraintTop_toBottomOf="@+id/et_password"
+            app:left_view_hint="请输入密保问题"
+            app:text="密保问题"
+            app:value="@={user.problem}"
+            tools:ignore="MissingConstraints" />
+
+        <com.lxc.base.view.LeftTextEditText
+            android:id="@+id/et_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/et_account"
+            app:layout_constraintStart_toStartOf="@+id/et_account"
+            app:layout_constraintTop_toBottomOf="@+id/et_problem"
+            app:left_view_hint="请输入密保答案"
+            app:value="@={user.answer}"
+            app:text="密保答案"
+            tools:ignore="MissingConstraints" />
+
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:text="注册"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/et_account"
+            app:layout_constraintStart_toStartOf="@+id/et_account" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="注册"
+            android:textSize="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/et_answer"
+            app:layout_constraintStart_toStartOf="@+id/et_answer"
+            app:layout_constraintTop_toBottomOf="@+id/et_answer">
+
+            <RadioButton
+                android:id="@+id/rb_personal"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="个人用户"
+                android:checked="@{user.type == user.PERSONAL}" />
+
+            <RadioButton
+                android:id="@+id/rb_company"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="企业用户"
+                android:checked="@{user.type == user.COMPANY}"/>
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

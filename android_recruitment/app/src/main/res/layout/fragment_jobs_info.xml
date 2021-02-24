@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.lxc.recruitment.entity.JobEntity"/>
+        <variable
+            name="job"
+            type="JobEntity" />
+
+
+        <variable
+            name="isEdit"
+            type="Boolean" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="简历名称"
+                app:value="@={job.name}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="招聘名称"
+                app:value="@={job.professional}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_professional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="招聘职位"
+                app:value="@={job.professional}"/>
+
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_degree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="所需学历"
+                app:value="@={job.degree}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="工作年限"
+                app:value="@={job.duration}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_site"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="工作地点"
+                app:isEdit="@{isEdit}"
+                app:value="@={job.site}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_treatment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="薪酬"
+                app:isEdit="@{isEdit}"
+                app:value="@={job.treatment}"/>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="保存"/>
+
+            <Button
+                android:id="@+id/btn_deliveryResume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="投递简历"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
+

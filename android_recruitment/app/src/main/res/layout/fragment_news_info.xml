@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.lxc.recruitment.entity.NewsEntity"/>
+        <variable
+            name="news"
+            type="NewsEntity" />
+
+        <variable
+            name="isEdit"
+            type="Boolean" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="新闻标题"
+                app:isEdit="@{isEdit}"
+                app:value="@={news.title}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="新闻内容"
+                app:isEdit="@{isEdit}"
+                app:value="@={news.content}"/>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="保存"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
+

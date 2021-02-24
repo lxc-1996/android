@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.lxc.recruitment.entity.AdministratorEntity"/>
+        <variable
+            name="admin"
+            type="AdministratorEntity" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="姓名"
+                app:value="@={admin.name}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="性别"
+                app:value="@={admin.sex}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="电话"
+                app:value="@={admin.phone}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="工号"
+                app:value="@={admin.number}"/>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="保存"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
+

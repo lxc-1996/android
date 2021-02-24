@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.lxc.recruitment.entity.CompanyEntity"/>
+        <variable
+            name="company"
+            type="CompanyEntity" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="姓名"
+                app:value="@={company.name}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="性别"
+                app:value="@={company.sex}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="电话"
+                app:value="@={company.phone}"/>
+
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="E-mail"
+                app:value="@={company.mail}"/>
+
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_company_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="公司名称"
+                app:value="@={company.companyName}"/>
+
+
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_license"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="营业执照"
+                app:value="@={company.license}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_properties"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="公司性质"
+                app:value="@={company.properties}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_sector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="所属行业"
+                app:value="@={company.sector}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="公司规模"
+                app:value="@={company.size}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_located"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="所在地"
+                app:value="@={company.located}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_web"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="公司网址"
+                app:value="@={company.web}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_introduction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="公司简介"
+                app:value="@={company.introduction}"/>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="保存"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
+

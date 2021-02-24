@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+// 传参插件
+apply plugin: 'androidx.navigation.safeargs'
+// hilt
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.lxc.recruitment"
+
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner rootProject.ext.android.testInstrumentationRunner
+
+        // 可以使用数据绑定
+        dataBinding {
+            enabled = true
+        }
+
+        javaCompileOptions{
+            // Schema 文件导出位置
+            annotationProcessorOptions{
+                arguments += ["room.schemaLocation":"$projectDir/ schemas".toString()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+kapt {
+    generateStubs = true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation rootProject.ext.dependencies.kotlin
+
+    implementation rootProject.ext.dependencies.appcompat
+    implementation rootProject.ext.dependencies.core_ktx
+    implementation rootProject.ext.dependencies.constraintlayout
+
+    implementation rootProject.ext.dependencies.lifecycle_extensions
+
+    implementation rootProject.ext.dependencies.navigation_fragment
+    implementation rootProject.ext.dependencies.navigation_ui
+
+    implementation rootProject.ext.dependencies.viewmodel
+    implementation rootProject.ext.dependencies.livedata
+
+    implementation rootProject.ext.dependencies.room_runtime
+    kapt rootProject.ext.dependencies.room_compiler
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation project(path: ':base')
+
+    implementation rootProject.ext.dependencies.work_runtime
+//    implementation rootProject.ext.dependencies.paging
+
+//    3.0.0-alpha02'
+    implementation 'androidx.paging:paging-runtime:3.0.0-alpha12'
+    implementation 'androidx.paging:paging-rxjava3:3.0.0-alpha12'
+
+    androidTestImplementation rootProject.ext.dependencies.junit
+    androidTestImplementation rootProject.ext.dependencies.espresso
+
+    kapt 'com.android.databinding:compiler:3.1.4'
+
+    api "com.google.dagger:hilt-android:2.31.2-alpha"
+    kapt "com.google.dagger:hilt-android-compiler:2.31.2-alpha"
+
+    api "androidx.viewpager2:viewpager2:1.0.0"
+
+    implementation "androidx.recyclerview:recyclerview:1.2.0-alpha04"
+
+    implementation  'com.contrarywind:Android-PickerView:4.1.9'
+}

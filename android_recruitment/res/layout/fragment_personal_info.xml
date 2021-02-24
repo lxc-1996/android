@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.lxc.recruitment.entity.PersonalEntity"/>
+<!--        <variable-->
+<!--            name="personal_info_model"-->
+<!--            type="PersonalEntity" />-->
+        <variable
+            name="personalModel"
+            type="com.lxc.recruitment.viewmodels.PersonalModel" />
+        <variable
+            name="personal_info"
+            type="com.lxc.recruitment.component.personal.PersonalInfoFragment" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.lxc.base.view.LeftTextEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="样例"
+                app:value="@={personalModel.observedValue}"/>
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="姓名" />
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="性别" />
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="年龄" />
+
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_degree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="学历" />
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="电话" />
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="求职状态" />
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_docType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="证件类型" />
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_idcard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="证件号" />
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_nationality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="国籍" />
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_national"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="民族" />
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_native"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="籍贯" />
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="居住地" />
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_political"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="政治面貌" />
+
+            <com.lxc.base.view.LeftTextEditText
+                android:id="@+id/lt_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="E-mail" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
+
